@@ -12,8 +12,8 @@ try {
   console.warn("Failed to configure window.fetch", e);
 }
 
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
+import {StrictMode} from 'react';
+import {createRoot} from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
 
