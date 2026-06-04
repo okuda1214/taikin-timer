@@ -1,14 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
-@import "tailwindcss";
-
-@theme {
-  --font-sans: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
-}
-
-@layer utilities {
-  /* Dynamic glowing effects or custom utilities */
-  .glow-shadow {
-    box-shadow: 0 0 20px rgba(99, 102, 241, 0.15);
+// Prevent "Cannot set property fetch of #<Window> which has only a getter" error across modern browser environments
+try {
+  if (typeof window !== 'undefined' && window.fetch) {
+    const originalFetch = window.fetch;
+    Object.defineProperty(window, 'fetch', {
+      value: originalFetch,
+      writable: true,
+      configurable: true
+    });
   }
+} catch (e) {
+  console.warn("Failed to configure window.fetch", e);
 }
+
+import {StrictMode} from 'react';
+import {createRoot} from 'react-dom/client';
+import App from './App.tsx';
+import './index.css';
+
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+);
