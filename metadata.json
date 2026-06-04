@@ -1,0 +1,6 @@
+{
+  "name": "退勤タイマー",
+  "description": "出勤時のチェックインから8時間30分自動でカウントダウンする、退勤目安時間お知らせタイマーです。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
